@@ -1,4 +1,4 @@
-import { useEffect, useState, VFC } from 'react'
+import { Fragment, useEffect, useState, VFC } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchPosts } from './store/posts/actions'
 
@@ -18,10 +18,10 @@ const PostList: VFC = () => {
       <h1>Post List</h1>
       <div>
         {posts.map(post => (
-          <>
+          <Fragment key={post.id}>
             <h2>{post.title}</h2>
             <p>{post.body}</p>
-          </>
+          </Fragment>
         ))}
       </div>
     </div>
