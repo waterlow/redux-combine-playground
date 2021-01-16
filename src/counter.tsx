@@ -1,5 +1,6 @@
 import { VFC } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
+import { increment, decrement } from './store/counter/actions'
 
 const Counter: VFC = () => {
   const count = useSelector(store => store.counter.num)
@@ -10,15 +11,15 @@ const Counter: VFC = () => {
       <div>
         {`count:${count}`}
       </div>
-      <button onClick={() => { dispatch({type: "increment"}) }}>+</button>
+      <button onClick={() => { dispatch(increment()) }}>+</button>
       <br/>
-      <button onClick={() => { dispatch({type: "decrement"}) }}>-</button>
+      <button onClick={() => { dispatch(decrement()) }}>-</button>
       <div>
         {`count2:${count2}`}
       </div>
-      <button onClick={() => { dispatch({type: "increment"}) }}>+</button>
+      <button onClick={() => { dispatch(increment()) }}>+</button>
       <br/>
-      <button onClick={() => { dispatch({type: "decrement"}) }}>-</button>
+      <button onClick={() => { dispatch(decrement()) }}>-</button>
     </>
   );
 }
