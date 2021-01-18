@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.menu {
+  background: yellow;
+  transition: height 1s;
+  height: 0;
+  overflow: hidden;
+}
+
+.menu-show {
+  height: 50px;
+}
