@@ -1,13 +1,12 @@
 import types from './types'
 import PostsJson from './posts.json'
+import { Actions } from '../actions'
 
 export const initialState = [] as typeof PostsJson
-export const reducer = (state = initialState, action: any) => {
+export const reducer = (state = initialState, action: Actions) => {
   switch (action.type) {
-    case types.fetchPosts:
-      // TODO: ここをAPIリクエストにする
-      // https://jsonplaceholder.typicode.com/posts
-      return PostsJson
+    case types.setPosts:
+      return action.posts
     default:
       return state
   }

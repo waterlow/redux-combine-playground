@@ -1,14 +1,16 @@
 import { Fragment, useEffect, useState, VFC } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchPosts } from './store/posts/actions'
+import { fetchPosts } from './store/posts/operations'
 
 const PostList: VFC = () => {
   const [visibility, setVisibility] = useState(false)
   const posts = useSelector(store => store.posts)
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchPosts())
-    setVisibility(true)
+    (async () => {
+      await dispatch(fetchPosts())
+      setVisibility(true)
+    })()
   }, [dispatch])
 
   if (!visibility) return null

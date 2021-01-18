@@ -1,3 +1,4 @@
 import types from './types'
+import PostsJson from './posts.json'
 
-export const fetchPosts = () => ({ type: types.fetchPosts })
+export const setPosts = (posts: typeof PostsJson) => ({ type: types.setPosts, posts })

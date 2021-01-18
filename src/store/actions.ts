@@ -8,3 +8,4 @@ type CreatorsToActions<T> = Unwrap<ReturnTypes<T>>
 
 export type Actions =
   | CreatorsToActions<typeof import("./counter/actions")>
+  | CreatorsToActions<typeof import("./posts/actions")>

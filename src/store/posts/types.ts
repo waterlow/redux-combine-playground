@@ -1,3 +1,3 @@
 export default {
-  fetchPosts: 'fetchPosts'
+  setPosts: 'setPosts'
 } as const
